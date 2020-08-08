@@ -1,0 +1,97 @@
+body {
+  background: url(bb.jpg) no-repeat center center fixed;
+}
+
+.logo-parent {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.logo-image {
+  width: 250px;
+  height: auto;
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 280px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: space-around;
+  margin-top: 60px;
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front img {
+  width: 200px;
+  height: 280px;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: none;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.cardbody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  background: none;
+  margin-top: 20px;
+  height: 30px;
+  min-width: 200px;
+  border-radius: 40px;
+  border: 2px solid white;
+  transition: 1s ease-out;
+}
+
+.search-box:hover {
+  width: 400px;
+  background-color: white;
+}
